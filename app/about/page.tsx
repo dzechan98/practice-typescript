@@ -1,5 +1,6 @@
-import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import image6 from "@/public/6.avif";
 
 export default function AboutPage() {
   return (
@@ -9,24 +10,29 @@ export default function AboutPage() {
           About <span className="text-primary">Horizon</span>
         </h1>
         <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-          We're on a mission to help businesses grow and succeed in the digital age.
+          We're on a mission to help businesses grow and succeed in the digital
+          age.
         </p>
       </div>
 
       <div className="mt-16 grid gap-12 md:grid-cols-2 md:gap-16">
-        <div className="relative aspect-video overflow-hidden rounded-xl" data-aos="fade-right">
-          <Image src="/placeholder.svg?height=600&width=800" alt="Our team" fill className="object-cover" />
+        <div
+          className="relative aspect-video overflow-hidden rounded-xl"
+          data-aos="fade-right"
+        >
+          <Image src={image6} alt="Our team" fill className="object-cover" />
         </div>
         <div className="flex flex-col justify-center" data-aos="fade-left">
           <h2 className="text-3xl font-bold">Our Story</h2>
           <p className="mt-4 text-muted-foreground">
-            Founded in 2023, Horizon began with a simple idea: to create beautiful, functional digital experiences that
-            help businesses thrive. What started as a small team of passionate designers and developers has grown into a
-            full-service digital agency.
+            Founded in 2023, Horizon began with a simple idea: to create
+            beautiful, functional digital experiences that help businesses
+            thrive. What started as a small team of passionate designers and
+            developers has grown into a full-service digital agency.
           </p>
           <p className="mt-4 text-muted-foreground">
-            Today, we work with clients across the globe, from startups to enterprise companies, helping them build
-            products that users love.
+            Today, we work with clients across the globe, from startups to
+            enterprise companies, helping them build products that users love.
           </p>
         </div>
       </div>
@@ -44,23 +50,28 @@ export default function AboutPage() {
             },
             {
               title: "Quality",
-              description: "We believe in craftsmanship and attention to detail in everything we create.",
+              description:
+                "We believe in craftsmanship and attention to detail in everything we create.",
             },
             {
               title: "Collaboration",
-              description: "We work closely with our clients, treating their challenges as our own.",
+              description:
+                "We work closely with our clients, treating their challenges as our own.",
             },
             {
               title: "Integrity",
-              description: "We're honest, transparent, and committed to doing what's right.",
+              description:
+                "We're honest, transparent, and committed to doing what's right.",
             },
             {
               title: "Impact",
-              description: "We measure our success by the positive difference we make for our clients.",
+              description:
+                "We measure our success by the positive difference we make for our clients.",
             },
             {
               title: "Growth",
-              description: "We're dedicated to continuous learning and improvement.",
+              description:
+                "We're dedicated to continuous learning and improvement.",
             },
           ].map((value, index) => (
             <Card
@@ -70,13 +81,17 @@ export default function AboutPage() {
               data-aos-delay={index * 100}
             >
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold animate-bounce-slow">{value.title}</h3>
-                <p className="mt-2 text-muted-foreground">{value.description}</p>
+                <h3 className="text-xl font-bold animate-bounce-slow">
+                  {value.title}
+                </h3>
+                <p className="mt-2 text-muted-foreground">
+                  {value.description}
+                </p>
               </CardContent>
             </Card>
           ))}
         </div>
       </div>
     </main>
-  )
+  );
 }

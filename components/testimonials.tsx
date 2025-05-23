@@ -1,6 +1,9 @@
-import Image from "next/image"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Star } from "lucide-react"
+import Image from "next/image";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Star } from "lucide-react";
+import image1 from "@/public/1.avif";
+import image2 from "@/public/2.avif";
+import image3 from "@/public/3.avif";
 
 export default function Testimonials() {
   const testimonials = [
@@ -9,23 +12,23 @@ export default function Testimonials() {
         "Horizon has completely transformed our online presence. The team delivered a stunning website that perfectly captures our brand.",
       author: "Sarah Johnson",
       role: "CEO, TechStart",
-      avatar: "/placeholder.svg?height=80&width=80&text=SJ",
+      avatar: image1,
     },
     {
       quote:
         "Working with Horizon was a game-changer for our business. Their attention to detail and commitment to quality is unmatched.",
       author: "Michael Chen",
       role: "Marketing Director, GrowthLabs",
-      avatar: "/placeholder.svg?height=80&width=80&text=MC",
+      avatar: image2,
     },
     {
       quote:
         "The team at Horizon went above and beyond our expectations. They delivered a product that not only looks great but performs exceptionally well.",
       author: "Emily Rodriguez",
       role: "Product Manager, InnovateCo",
-      avatar: "/placeholder.svg?height=80&width=80&text=ER",
+      avatar: image3,
     },
-  ]
+  ];
 
   return (
     <section className="bg-muted/50 py-20 md:py-32">
@@ -38,7 +41,8 @@ export default function Testimonials() {
             Trusted by Businesses Worldwide
           </h2>
           <p className="max-w-[85%] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Don't just take our word for it. Here's what our clients have to say.
+            Don't just take our word for it. Here's what our clients have to
+            say.
           </p>
         </div>
         <div className="mx-auto mt-16 grid max-w-5xl gap-8 md:grid-cols-3">
@@ -52,15 +56,20 @@ export default function Testimonials() {
               <CardContent className="pt-6">
                 <div className="mb-4 flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                    <Star
+                      key={i}
+                      className="h-5 w-5 fill-primary text-primary"
+                    />
                   ))}
                 </div>
-                <p className="mb-6 text-muted-foreground">"{testimonial.quote}"</p>
+                <p className="mb-6 text-muted-foreground">
+                  "{testimonial.quote}"
+                </p>
               </CardContent>
               <CardFooter className="flex items-center gap-4 border-t px-6 py-4">
                 <div className="h-10 w-10 overflow-hidden rounded-full animate-bounce-slow">
                   <Image
-                    src={testimonial.avatar || "/placeholder.svg"}
+                    src={testimonial.avatar}
                     alt={testimonial.author}
                     width={40}
                     height={40}
@@ -69,7 +78,9 @@ export default function Testimonials() {
                 </div>
                 <div>
                   <p className="font-medium">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {testimonial.role}
+                  </p>
                 </div>
               </CardFooter>
             </Card>
@@ -77,5 +88,5 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }
